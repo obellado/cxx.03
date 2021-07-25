@@ -3,7 +3,7 @@
 # define __CLAPTRAP_H__
 
 class ClapTrap {
-	private:
+	protected:
 		std::string				_name;
 		int						_hitPoints;
 		int 					_energyPoints;
@@ -14,24 +14,22 @@ class ClapTrap {
 		ClapTrap( void );
 		ClapTrap( std::string name );
 		~ClapTrap( void );
-		ClapTrap( ClapTrap const &tocopy );
 
 		std::string	getName( void ) const ;
 		int	getHitPoints( void ) const ;
 		int	getEnergyPoints( void ) const ;
 		int	getAttackDamage( void ) const ;
 
+		void	setName( std::string name ) ;
+		void	setHitPoints( int i ) ;
+		void	setEnergyPoints( int i ) ;
+		void	setAttackDamage( int i ) ;
+
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-		ClapTrap& operator=( const ClapTrap & tocopy );
-
-		ClapTrap( int const i );
-		ClapTrap( float const i );
 
 };
-
-std::ostream& operator << ( std::ostream & o, const ClapTrap &ct );
 
 #endif
