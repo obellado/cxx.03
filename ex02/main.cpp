@@ -9,9 +9,13 @@ int	main( void ) {
 
 
 	Prometeus.attack( "Zeus");
+	Prometeus.takeDamage(100);
+	Prometeus.beRepaired(50);
 	Prometeus.guardGate();
 
 	Zeus.attack( "Prometeus" );
+	Zeus.takeDamage(10);
+	Zeus.beRepaired(5);
 	Zeus.highFivesGuys();
 
 	return 0;

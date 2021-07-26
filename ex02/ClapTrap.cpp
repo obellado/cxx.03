@@ -31,7 +31,7 @@ int	ClapTrap::getAttackDamage( void ) const {
 }
 
 void ClapTrap::attack(std::string const & target) {
-	std::cout << "ClapTrap " << this->getName() << " attacks " << target << " , causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 
 }
 

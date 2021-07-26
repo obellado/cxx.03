@@ -6,7 +6,7 @@
 #    By: obellado <obellado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 18:00:15 by obellado          #+#    #+#              #
-#    Updated: 2021/07/25 20:34:50 by obellado         ###   ########.fr        #
+#    Updated: 2021/07/26 20:40:12 by obellado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	go
 
 CXX		=	clang++
 
-FLAGCXX =	-Wall -Werror -Wextra
+FLAGCXX =	-Wall -Werror -Wextra -Wshadow -Wno-shadow
 
 SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 

@@ -30,6 +30,22 @@ int	ClapTrap::getAttackDamage( void ) const {
 	return ( this->_attackDamage );
 }
 
+void	ClapTrap::setName( std::string name ) {
+	_name = name;
+}
+
+void	ClapTrap::setHitPoints( int i ) {
+	_hitPoints = i;
+}
+
+void	ClapTrap::setEnergyPoints( int i ) {
+	_energyPoints = i;
+}
+
+void	ClapTrap::setAttackDamage( int i ) {
+	_attackDamage = i;
+}
+
 void ClapTrap::attack(std::string const & target) {
 	std::cout << "ClapTrap " << this->getName() << " attacks " << target << " , causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 

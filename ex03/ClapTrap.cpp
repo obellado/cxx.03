@@ -31,7 +31,7 @@ int	ClapTrap::getAttackDamage( void ) const {
 }
 
 void ClapTrap::attack(std::string const & target) {
-	std::cout << "ClapTrap " << this->getName() << " attacks " << target << " , causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 
 }
 
@@ -46,18 +46,18 @@ void ClapTrap::beRepaired(unsigned int amount) {
 }
 
 void	ClapTrap::setName( std::string name ) {
-	_name = name;
+	this->_name = name;
 }
 
 void	ClapTrap::setHitPoints( int i ) {
-	_hitPoints = i;
+	this->_hitPoints = i;
 }
 
 void	ClapTrap::setEnergyPoints( int i ) {
-	_energyPoints = i;
+	this->_energyPoints = i;
 }
 
 void	ClapTrap::setAttackDamage( int i ) {
-	_attackDamage = i;
+	this->_attackDamage = i;
 }
 

@@ -4,52 +4,30 @@
 
 
 FragTrap::FragTrap( void ) {
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+	ClapTrap::setAttackDamage(this->_attackDamage);
+	ClapTrap::setEnergyPoints(this->_energyPoints);
+	ClapTrap::setHitPoints(this->_hitPoints);
 	std::cout << "FragTrap Bot has been constructed" << std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) {
-	this->setName(name);
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
-	std::cout << "FragTrap " << this->getName() << " has been constructed" << std::endl;
+FragTrap::FragTrap( std::string name ) : ClapTrap(name) {
+	this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+	ClapTrap::setAttackDamage(this->_attackDamage);
+	ClapTrap::setEnergyPoints(this->_energyPoints);
+	ClapTrap::setHitPoints(this->_hitPoints);
+	std::cout << "FragTrap " << this->_name << " has been constructed" << std::endl;
 }
 
 FragTrap::~FragTrap( void ) {
-	std::cout << "FragTrap " << this->getName() << " is dead :( " << std::endl;
-}
-
-std::string	FragTrap::getName( void ) const {
-	return ( this->_name );
-}
-
-int	FragTrap::getHitPoints( void ) const {
-	return ( this->_hitPoints );
-}
-
-int	FragTrap::getEnergyPoints( void ) const {
-	return ( this->_energyPoints );
-}
-
-int	FragTrap::getAttackDamage( void ) const {
-	return ( this->_attackDamage );
-}
-
-void FragTrap::attack(std::string const & target) {
-	std::cout << "FragTrap " << this->getName() << " attacks " << target << " , causing " << this->getAttackDamage() << " points of damage!" << std::endl;
-
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-	std::cout << "FragTrap " << this->getName() << " is damaged for " << amount << " points of damage !" << std::endl;
-	this->_energyPoints -= amount;
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-	std::cout << "FragTrap " << this->getName() << " is repaired for " << amount << " points !" << std::endl;
-	this->_energyPoints += amount;
+	std::cout << "FragTrap " << this->_name << " is dead :( " << std::endl;
 }
 
 void FragTrap::highFivesGuys( void ){
-	std::cout << "FragTrap " << this->getName() << " said: \"High Five, Guys!\"" << std::endl;
+	std::cout << "FragTrap " << this->_name << " said: \"High Five, Guys!\"" << std::endl;
 }

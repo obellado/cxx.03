@@ -1,55 +1,28 @@
 #include <iostream>
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 
 DiamondTrap::DiamondTrap( void ) {
+	ClapTrap::setHitPoints(FragTrap::_hitPoints);
+	ClapTrap::setEnergyPoints(ScavTrap::_energyPoints);
+	ClapTrap::setEnergyPoints(FragTrap::_attackDamage);
 	std::cout << "DiamondTrap Bot has been constructed" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) {
-	this->setName(name);
-	// this->setHitPoints(100);
-	// this->setEnergyPoints(100);
-	// this->setAttackDamage(30);
-	std::cout << "DiamondTrap " << this->getName() << " has been constructed" << std::endl;
+DiamondTrap::DiamondTrap( std::string name ) : _name(name), ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) {
+	ClapTrap::setHitPoints(FragTrap::_hitPoints);
+	ClapTrap::setEnergyPoints(ScavTrap::_energyPoints);
+	ClapTrap::setAttackDamage(FragTrap::_attackDamage);
+	std::cout << "DiamondTrap " << this->_name << " has been constructed" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap( void ) {
-	std::cout << "DiamondTrap " << this->getName() << " is dead :( " << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " is dead :( " << std::endl;
 }
 
-std::string	DiamondTrap::getName( void ) const {
-	return ( this->_name );
-}
-
-int	DiamondTrap::getHitPoints( void ) const {
-	return ( this->_hitPoints );
-}
-
-int	DiamondTrap::getEnergyPoints( void ) const {
-	return ( this->_energyPoints );
-}
-
-int	DiamondTrap::getAttackDamage( void ) const {
-	return ( this->_attackDamage );
-}
-
-void DiamondTrap::attack(std::string const & target) {
-	std::cout << "DiamondTrap " << this->getName() << " attacks " << target << " , causing " << this->getAttackDamage() << " points of damage!" << std::endl;
-
-}
-
-void DiamondTrap::takeDamage(unsigned int amount) {
-	std::cout << "DiamondTrap " << this->getName() << " is damaged for " << amount << " points of damage !" << std::endl;
-	this->_energyPoints -= amount;
-}
-
-void DiamondTrap::beRepaired(unsigned int amount) {
-	std::cout << "DiamondTrap " << this->getName() << " is repaired for " << amount << " points !" << std::endl;
-	this->_energyPoints += amount;
-}
-
-// void DiamondTrap::highFivesGuys( void ){
-// 	std::cout << "DiamondTrap " << this->getName() << " said: \"High Five, Guys!\"" << std::endl;
+void DiamondTrap::whoAmI( void ) {
+	std::cout << "Name of mine: " << _name << "; ClapTrap name of mine: " << ClapTrap::_name << std::endl;
 }

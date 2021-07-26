@@ -28,8 +28,6 @@ class ClapTrap {
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-
 };
 
 #endif

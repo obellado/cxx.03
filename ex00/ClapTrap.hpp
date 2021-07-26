@@ -21,15 +21,14 @@ class ClapTrap {
 		int	getEnergyPoints( void ) const ;
 		int	getAttackDamage( void ) const ;
 
+		void	setName( std::string name ) ;
+		void	setHitPoints( int i ) ;
+		void	setEnergyPoints( int i ) ;
+		void	setAttackDamage( int i ) ;
+
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-		ClapTrap& operator=( const ClapTrap & tocopy );
-
-		ClapTrap( int const i );
-		ClapTrap( float const i );
-
 };
 
 std::ostream& operator << ( std::ostream & o, const ClapTrap &ct );

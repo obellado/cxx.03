@@ -7,7 +7,7 @@ ScavTrap::ScavTrap( void ) {
 	std::cout << "ScavTrap Bot has been constructed" << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string name ) {
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name) {
 	this->setName(name);
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
@@ -36,7 +36,7 @@ int	ScavTrap::getAttackDamage( void ) const {
 }
 
 void ScavTrap::attack(std::string const & target) {
-	std::cout << "ScavTrap " << this->getName() << " attacks " << target << " , causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 
 }
 
